@@ -1,5 +1,4 @@
 
-
 function adaptLayout() {
   const content = document.querySelector('.content');
   const h1 = content.querySelector('h1');
