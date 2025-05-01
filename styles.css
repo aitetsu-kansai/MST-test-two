@@ -47,7 +47,7 @@ video {
 		background-color: #000;
 		color:#fff;
 		text-align: justify;
-		mix-blend-mode: multiply;
+		/* mix-blend-mode: multiply; */
 		
 	}
 	
@@ -59,22 +59,11 @@ video {
 	}
 
 .line {
-    display: inline-block;
+    display: block;
+    width: 100%;
     position: relative;
-    margin-bottom: 0.3em;
-    padding: 0 0.2em;
-		width: 100%;
-		/* text-align: justify; */
     white-space: nowrap;
-}
-
-.word .with-video {
-	background-color: red;
-	content: " ";
-	position: absolute;
-	left: -65px;
-	top: 50%;
-	transform: translateY(-50%);
+    margin-bottom: 0.3em;
 }
 
 .word {
@@ -82,9 +71,38 @@ video {
     position: relative;
 }
 
+.word.with-video {
+	
+    display: inline-block;
+    height: 1em;
+    flex-grow: 1;
+    width: 100%;
+    margin: 0 0.2em;
+    vertical-align: middle;
+    background: linear-gradient(90deg, transparent, rgba(255, 107, 0, 0.5));
+}
 
 
+.line:nth-child(1) .with-video {
+    background: linear-gradient(135deg, #d4a017, #8b4513);
+		
+    width: calc(100% - 20ch); 
+}
 
+.line:nth-child(2) .with-video {
+    background: #ff6b00;
+    width: calc(100% - 25ch);
+}
+
+.line:nth-child(3) .with-video {
+    background: #8b0000;
+    width: calc(100% - 22ch);
+}
+
+.line:nth-child(4) .with-video {
+    background: linear-gradient(90deg, #8b4513, #d4a017);
+    width: calc(100% - 15ch);
+}
 
 @media (max-width: 768px) {
     .content {
@@ -97,5 +115,10 @@ video {
     
     .line {
         white-space: normal;
+    }
+    
+    .word.with-video {
+        width: 60px;
+        margin: 0 0.5em;
     }
 } 
