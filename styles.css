@@ -12,7 +12,7 @@ body {
 }
 
 .container {
-	/* overflow: hidden; */
+	overflow: hidden;
     position: relative;
     width: 100%;
     min-height: 100vh;
@@ -24,18 +24,17 @@ body {
 	object-fit: cover;
 }
 
-/* 
+
 video {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     min-width: 100%;
-    min-height: 100%;
+    height: 100vh;
     width: auto;
-    height: auto;
     object-fit: cover;
-} */
+}
 
 .content {
 	z-index: 2;
@@ -44,13 +43,13 @@ video {
 		left: 0;
 		top: 0;
     height: 100%;
-		background-color: #000;
+		background-color:black;
 		color:#fff;
 		text-align: justify;
-		/* mix-blend-mode: multiply; */
+		mix-blend-mode:hard-light;
 		
 	}
-	
+
 	h1 {
 		font-size: 8rem;
     font-weight: 800;
@@ -69,56 +68,39 @@ video {
 .word {
     display: inline-block;
     position: relative;
+		z-index: 999;
+		color: white;
 }
 
 .word.with-video {
-	
-    display: inline-block;
     height: 1em;
-    flex-grow: 1;
     width: 100%;
     margin: 0 0.2em;
     vertical-align: middle;
-    background: linear-gradient(90deg, transparent, rgba(255, 107, 0, 0.5));
+
 }
 
 
 .line:nth-child(1) .with-video {
-    background: linear-gradient(135deg, #d4a017, #8b4513);
-		
-    width: calc(100% - 20ch); 
+	background: #e09b7fbe;
+	width: calc(100% - 20ch); 
 }
 
 .line:nth-child(2) .with-video {
-    background: #ff6b00;
-    width: calc(100% - 25ch);
+	background: #e09b7fbe;
+
+    width: calc(100% - 20ch);
 }
 
 .line:nth-child(3) .with-video {
-    background: #8b0000;
-    width: calc(100% - 22ch);
+	background: #e4ab95be;
+
+    width: calc(100% - 20ch);
 }
 
 .line:nth-child(4) .with-video {
-    background: linear-gradient(90deg, #8b4513, #d4a017);
-    width: calc(100% - 15ch);
+	background: #e4ab95be;
+
+    width: calc(100% - 11ch);
 }
 
-@media (max-width: 768px) {
-    .content {
-        padding: 4vw;
-    }
-    
-    h1 {
-        font-size: clamp(1.8rem, 5vw, 3.5rem);
-    }
-    
-    .line {
-        white-space: normal;
-    }
-    
-    .word.with-video {
-        width: 60px;
-        margin: 0 0.5em;
-    }
-} 
