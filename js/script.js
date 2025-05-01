@@ -1,4 +1,23 @@
 
+document.addEventListener('DOMContentLoaded', () => {
+  const video = document.getElementById('mainVideo');
+  
+  const playVideo = () => {
+    const promise = video.play();
+    
+ 
+  };
+  
+  
+  playVideo();
+  
+  document.body.addEventListener('click', function firstTouch() {
+    playVideo();
+    document.body.removeEventListener('click', firstTouch);
+  }, { once: true });
+});
+
+
 function adaptLayout() {
   const content = document.querySelector('.content');
   const h1 = content.querySelector('h1');
@@ -74,7 +93,6 @@ function adaptLayout() {
   }
 
 }
-
 
 
 let resizeTimer;
